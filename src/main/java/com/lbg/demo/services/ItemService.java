@@ -65,6 +65,9 @@ public class ItemService {
 		if (newItem.getPerson() != null) {
 			existing.setAvailable(false);
 		}
+		if (newItem.getPerson() == null) {
+			existing.setAvailable(true);
+		}
 
 		Item updated = this.repo.save(existing);
 
